@@ -60,7 +60,7 @@ function signUp() {
         if (request.readyState == 4) {
             const response = request.responseText;
             if (response === "success") {
-                alert ("Account Creat Success");
+                alert ("Verification send please check Your email");
             }else{
                 alert(response);
             }
