@@ -19,11 +19,14 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
         $row = $resultset->num_rows;
         if ($row > 0) {
             $user = $resultset->fetch_assoc();
-            $_SESSION["user"] = $user;
-            echo "success";
+            if ($user["status"] == 1) {
+                $_SESSION["user"] = $user;
+                echo "Success";
+            }else {
+                echo "Your account is suspended. please contect admin";
+            }
         }else {
             echo "Invelid Credintial";
         }
     }
 }
-?>
